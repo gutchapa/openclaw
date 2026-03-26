@@ -1,0 +1,4 @@
+#!/bin/bash
+export TELEGRAM_BOT_TOKEN="8607012506:AAHhXBx7v6q7lQ7VaNqIpDBYmpNeoUpi9r0"
+export OPENCLAW_AUTH_TOKEN="16dafad77088cce2dcb6407f2c8c24c2404e3f7e0726a58b5c94dcc473569518"
+openclaw gateway restart
