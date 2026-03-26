@@ -1,0 +1,7 @@
+{
+  "id": "custom-router-plugin",
+  "name": "Smart Router Plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "format": "openclaw"
+}

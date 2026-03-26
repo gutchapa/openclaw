@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "androidtv-remote": "^1.0.10",
+    "castv2-client": "^1.2.0",
     "node-llama-cpp": "^3.18.1"
   }
 }
