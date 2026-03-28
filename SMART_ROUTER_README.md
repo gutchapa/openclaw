@@ -18,14 +18,14 @@ This plugin implements a local, multi-agent routing step:
 You must download a tiny, CPU-friendly classifier model. We recommend **Llama 3.2 1B Instruct (GGUF format)**.
 ```bash
 # In your OpenClaw Docker container
-mkdir -p /home/node/.node-llama-cpp/models
-curl -L "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf" -o /home/node/.node-llama-cpp/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
+mkdir -p /home/dell/.node-llama-cpp/models
+curl -L "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf" -o /home/dell/.node-llama-cpp/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf
 ```
 
 ### 2. Install the Plugin
 Copy the `custom-router-plugin.ts` file from your workspace into OpenClaw's official plugins directory:
 ```bash
-cp /home/node/.openclaw/workspace/custom-router-plugin.ts ~/.openclaw/plugins/
+cp /home/dell/.openclaw/workspace/custom-router-plugin.ts ~/.openclaw/plugins/
 ```
 
 ### 3. Restart the Container
@@ -35,7 +35,7 @@ docker restart <openclaw-container-id>
 ```
 
 ## 📝 The Code (`custom-router-plugin.ts`)
-The full TypeScript source code for the plugin is maintained locally in your workspace at `/home/node/.openclaw/workspace/custom-router-plugin.ts`.
+The full TypeScript source code for the plugin is maintained locally in your workspace at `/home/dell/.openclaw/workspace/custom-router-plugin.ts`.
 
 ## 🧠 Why Llama 3.2 1B instead of DeepSeek?
 We originally tested DeepSeek R1 1.5B for the Triage step. However, reasoning models (R1) are hardwired to generate `<think>` chains and cannot reliably follow strict formatting instructions like "Output exactly one word: YES or NO". Llama 3.2 1B perfectly obeys zero-shot formatting constraints while parsing language in under 1 second on a CPU.

@@ -21,7 +21,7 @@ async function getLlamaCore() {
 async function askLlamaIfItCanHandle(prompt) {
     const llama = await getLlamaCore();
     if (!triageModel) {
-        const modelPath = "/home/node/.node-llama-cpp/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf";
+        const modelPath = "/home/dell/.node-llama-cpp/models/Llama-3.2-1B-Instruct-Q4_K_M.gguf";
         console.log("--> 🚀 Loading Llama 3.2 1B (Triage Classifier)...");
         triageModel = await llama.loadModel({ modelPath });
         triageContext = await triageModel.createContext();
@@ -51,7 +51,7 @@ async function runLocal(prompt) {
     console.log("--> 🛡️ ROUTING TO LOCAL EXECUTION (DeepSeek 1.5B via CPU)...");
     const llama = await getLlamaCore();
     if (!execModel) {
-        const modelPath = "/home/node/.openclaw/workspace/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf";
+        const modelPath = "/home/dell/.openclaw/workspace/models/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf";
         console.log("--> 🚀 Loading DeepSeek 1.5B (Heavy Reasoner)...");
         execModel = await llama.loadModel({ modelPath });
         execContext = await execModel.createContext();
